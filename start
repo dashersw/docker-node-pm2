@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+if [ -z "$APP" ]; then
+    echo "APP is empty"
+else
+    echo "APP is $APP"
+    ls -al /app
+    pm2 start $APP --no-daemon
+fi
