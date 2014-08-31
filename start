@@ -2,9 +2,8 @@
 set -e
 
 if [ -z "$APP" ]; then
-    echo "APP is empty"
-else
-    echo "APP is $APP"
-    ls -al /app
-    pm2 start $APP --no-daemon
+    export APP=app.js
 fi
+
+cd /app
+pm2 start -x $APP --no-daemon
