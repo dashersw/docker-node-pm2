@@ -2,7 +2,7 @@ FROM dockerfile/nodejs:latest
 
 MAINTAINER Armagan Amcalar "armagan@amcalar.com"
 
-RUN npm install -g pm2
+RUN npm install -g pm2@0.9.5
 
 VOLUME ["/app"]
 ADD start /start
