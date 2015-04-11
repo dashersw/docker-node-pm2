@@ -1,4 +1,4 @@
-FROM dockerfile/nodejs:latest
+FROM google/nodejs
 
 MAINTAINER Armagan Amcalar "armagan@amcalar.com"
 
