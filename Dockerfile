@@ -1,4 +1,4 @@
-FROM google/nodejs
+FROM node:latest
 
 MAINTAINER Armagan Amcalar "armagan@amcalar.com"
 
