@@ -2,7 +2,7 @@ FROM node:latest
 
 MAINTAINER Armagan Amcalar "armagan@amcalar.com"
 
-RUN npm install -g pm2@0.12.10
+RUN npm install -g pm2@latest
 
 VOLUME ["/app"]
 ADD start /start
