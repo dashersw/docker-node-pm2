@@ -23,7 +23,7 @@ RUN apk add --update python python-dev build-base bash git curl ca-certificates 
     ln -s /opt/jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/jdk && \
     find /opt/jdk/ -maxdepth 1 -mindepth 1 | grep -v jre | xargs rm -rf && \
     cd /opt/jdk/ && ln -s ./jre/bin ./bin && \
-    npm install -g pm2 bower gulp-cli && \
+    npm install -g bower gulp-cli && \
     rm -rf /opt/jdk/jre/plugin \
            /opt/jdk/jre/bin/javaws \
            /opt/jdk/jre/bin/jjs \
