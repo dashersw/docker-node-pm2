@@ -65,7 +65,7 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
     ln -s /opt/jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/jdk && \
     find /opt/jdk/ -maxdepth 1 -mindepth 1 | grep -v jre | xargs rm -rf && \
     cd /opt/jdk/ && ln -s ./jre/bin ./bin && \
-    npm install -g bower gulp-cli && \
+    npm install -g bower gulp-cli ava && \
     mkdir -p /data/db && \
 
     rm -rf /etc/ssl /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
