@@ -51,6 +51,8 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
 
 # build tools
   apk add --update python python-dev build-base bash git curl ca-certificates openssh-client rsync && \
+    echo http://dl-4.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+    apk add --no-cache mongodb && \
     curl -L -o /tmp/glibc-2.21-r2.apk "https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk" && \
     apk add --allow-untrusted /tmp/glibc-2.21-r2.apk && \
     curl -L -o /tmp/glibc-bin-2.21-r2.apk "https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-bin-2.21-r2.apk" && \
@@ -64,6 +66,7 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
     find /opt/jdk/ -maxdepth 1 -mindepth 1 | grep -v jre | xargs rm -rf && \
     cd /opt/jdk/ && ln -s ./jre/bin ./bin && \
     npm install -g bower gulp-cli && \
+    mkdir -p /data/db && \
 
     rm -rf /etc/ssl /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
            /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
