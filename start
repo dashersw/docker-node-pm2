@@ -10,7 +10,7 @@ fi
 
 COMMAND="pm2 start -x $APP --no-daemon"
 
-if [ "$WATCH" == "true ]; then
+if [ "$WATCH" == "true" ]; then
     COMMAND=$COMMAND" --watch"
 fi
 
